@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tours', function (Blueprint $table) {
-            $table->json('multi_data')->comment('Добавление нескольких дат');
+            $table->json('multi_data')->nullable()->comment('Добавление нескольких дат');
         });
     }
 
