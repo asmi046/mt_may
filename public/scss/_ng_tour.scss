@@ -24,17 +24,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
     font-family: 'Play';
-    gap:20px;
+    gap:30px;
     overflow: hidden;
+    padding: 15px;
 
 
     .tour_card {
         overflow: hidden;
         width: 30%;
         border-radius: 20px;
-        background-color: $blue_light_color;
+        background-color: white;
         display: flex;
         flex-direction: column;
+        box-shadow: $box_shadow;
         .img {
             position: relative;
             height: 240px;
@@ -58,7 +60,7 @@
             }
         }
 
-        .label_white {
+        .label_blue {
             margin-right: auto;
             margin-bottom: 10px;
         }

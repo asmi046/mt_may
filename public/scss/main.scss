@@ -12,11 +12,10 @@
 body{
     font-family: $main_fonts;
     font-size: 16px;
-    background-color: $blue_color;
-    color:white;
+    color: $black_color;
 
     a{
-        color:white;
+        color:$black_color;
     }
 }
 
@@ -132,6 +131,10 @@ h1 {
     font-family: "Play";
     &_white {
         background-color: white;
+    }
+    &_blue {
+        background-color: $blue_light_color;
+        color:white
     }
 }
 

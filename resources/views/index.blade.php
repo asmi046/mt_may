@@ -3,7 +3,7 @@
 @section('main')
     <section class="banner_video">
         <video autoplay muted loop class="_video">
-            <source src="{{ asset('img/video_bg_2.mp4') }}" type="video/mp4">
+            <source src="{{ asset('img/exkursionka.mp4') }}" type="video/mp4">
         </video>
         <div class="shadow"></div>
 
@@ -55,12 +55,12 @@
         <div class="container">
             <div class="about_tours">
                 <div class="text">
-                    <h2>Новогодние туры <br>из Курска <strong class="gold">2025</strong></h2>
-                    <p class="subtitle">Начните новый год с урагана эмоций и впечатлений вместе с новогодними турами от МирТуризма. У нас Вы найдете путешествия на любой вкус и кошелек.</p>
+                    <h2>Майские туры <br>из Курска <strong class="gold">2025</strong></h2>
+                    <p class="subtitle">Встречай весну с урагана эмоций и впечатлений вместе с турами от МирТуризма. У нас Вы найдете путешествия на любой вкус и кошелек.</p>
                     <a class="button" href="#showModal">Получить консультацию</a>
                 </div>
                 <div class="el">
-                    <img src="{{ asset('img/main_el.svg') }}" alt="Каталог новогодних туров из Курска 2025">
+                    <img src="{{ asset('img/main_el.svg') }}" alt="Каталог Майских туров из Курска 2025">
                 </div>
             </div>
 
