@@ -167,7 +167,7 @@ gsap.to( ".obl_3",
             start:'top top+=50%',
             end: 'bottom bottom-=20%',
             scrub:true,
-            markers:true,
+            // markers:true,
         },
         xPercent: 120,
         duration: 1.5

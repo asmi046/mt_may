@@ -54,7 +54,7 @@
     <section id="tours_cat" class="turs_in_main_section">
         <img class="obl obl_1" src="{{ asset('img/obl/obl_1.svg') }}" alt="">
         <img class="obl obl_2" src="{{ asset('img/obl/obl_2.svg') }}" alt="">
-        {{-- <img class="obl obl_3" src="{{ asset('img/obl/obl_3.svg') }}" alt=""> --}}
+        <img class="obl obl_3" src="{{ asset('img/obl/obl_3.svg') }}" alt="">
 
         <div class="container">
             <div class="about_tours">
