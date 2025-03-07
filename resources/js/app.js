@@ -46,7 +46,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
-gsap.registerPlugin(TextPlugin,ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 ScrollTrigger.normalizeScroll(true)
 
@@ -54,7 +54,7 @@ let smoother = ScrollSmoother.create({
     smooth: 2,
     effects: true,
     normalizeScroll: true
-  });
+});
 
 
 let img_object_from =  {
@@ -66,7 +66,7 @@ let img_object_to = {
 }
 
 let tl = gsap.timeline({delay:1})
-    .from('.about', { opacity:0, scale:0})
+    // .from('.about', { opacity:0, scale:0})
     // .from('.location_section', { opacity:0, scale:0})
 
 tl.fromTo('header .container',
@@ -167,6 +167,7 @@ gsap.to( ".obl_3",
             start:'top top+=50%',
             end: 'bottom bottom-=20%',
             scrub:true,
+            markers:true,
         },
         xPercent: 120,
         duration: 1.5

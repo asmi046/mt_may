@@ -1,14 +1,12 @@
+
+
 .turs_in_main_section {
     background-color: #ECF8F6;
     background-image: url(../img/main_bg_1.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
     position: relative;
-
-    .container {
-        z-index: 10;
-        position: relative;
-    }
+    overflow: hidden;
 
     .obl {
         z-index: 1;
@@ -32,6 +30,13 @@
         left: -30%;
         top: 60%;
     }
+
+    .container {
+        z-index: 10;
+        position: relative;
+    }
+
+
 }
 
 
