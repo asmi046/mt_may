@@ -14,6 +14,8 @@
 
     <meta name="_token" content="{{ csrf_token() }}">
 
+    <script src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ScrollSmoother.min.js"></script>
+
     @vite([
         'resources/css/app.css',
         'resources/js/app.js',
@@ -27,7 +29,11 @@
     </div>
     <x-menues.side-menu></x-menues.side-menu>
     <main id="main">
-        @yield('main')
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                @yield('main')
+            </div>
+        </div>
     </main>
 </body>
 

@@ -52,6 +52,9 @@
     </section>
 
     <section id="tours_cat" class="turs_in_main_section">
+        <img class="obl obl_1" src="{{ asset('img/obl/obl_1.svg') }}" alt="">
+        <img class="obl obl_2" src="{{ asset('img/obl/obl_2.svg') }}" alt="">
+        <img class="obl obl_3" src="{{ asset('img/obl/obl_3.svg') }}" alt="">
         <div class="container">
             <div class="about_tours">
                 <div class="text">
@@ -60,7 +63,8 @@
                     <a class="button" href="#showModal">Получить консультацию</a>
                 </div>
                 <div class="el">
-                    <img src="{{ asset('img/main_el.svg') }}" alt="Каталог Майских туров из Курска 2025">
+                    <img class="turists" src="{{ asset('img/turists.svg') }}" alt="Каталог Майских туров из Курска 2025">
+                    <img class="buss" src="{{ asset('img/buss.svg') }}" alt="Каталог Майских туров из Курска 2025">
                 </div>
             </div>
 

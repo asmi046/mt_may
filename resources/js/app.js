@@ -46,7 +46,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
-gsap.registerPlugin(TextPlugin,ScrollTrigger,ScrollToPlugin);
+gsap.registerPlugin(TextPlugin,ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+
+ScrollTrigger.normalizeScroll(true)
+
+let smoother = ScrollSmoother.create({
+    smooth: 2,
+    effects: true,
+    normalizeScroll: true
+  });
+
 
 let img_object_from =  {
     opacity:0,
@@ -91,6 +100,92 @@ tl.fromTo('header .container',
         duration:.5
     }
 )
+
+
+let tl1 = gsap.timeline({
+    delay:2,
+    scrollTrigger: {
+        trigger: ".about_tours",
+        // markers:true,
+        start:'top bottom-=10%',
+        end: 'bottom 50%',
+        scrub:true,
+    }
+})
+
+tl1.fromTo( ".turists",
+    {
+        xPercent: 150,
+        opacity: 0,
+    },
+    {
+        xPercent: 0,
+        opacity: 1,
+        duration:1.5,
+        ease: "power1.out"
+    }
+)
+.fromTo( ".buss",
+    { xPercent: -20, opacity: 0, scaleX: -0.3, scaleY: 0.3 },
+    {  xPercent: 0, opacity: 1, scaleX: -1, scaleY: 1, duration:1.5, ease: "power1.out" }
+)
+
+gsap.to( ".obl_1",
+    {
+        delay:1,
+        scrollTrigger: {
+            trigger: ".all_tour_wrapper",
+            start:'top top+=50%',
+            end: 'bottom bottom-=20%',
+            scrub:true,
+        },
+        xPercent: 120,
+        duration:1.5
+    },
+)
+
+gsap.to( ".obl_2",
+    {
+        delay:1.5,
+        scrollTrigger: {
+            trigger: ".all_tour_wrapper",
+            start:'top top+=50%',
+            end: 'bottom bottom-=20%',
+            scrub:true,
+        },
+        xPercent: -120,
+        duration: 1.5
+    },
+)
+
+
+gsap.to( ".obl_3",
+    {
+        delay:1.5,
+        scrollTrigger: {
+            trigger: ".all_tour_wrapper",
+            start:'top top+=50%',
+            end: 'bottom bottom-=20%',
+            scrub:true,
+        },
+        xPercent: 120,
+        duration: 1.5
+    },
+)
+
+// ScrollTrigger.create({
+//     trigger: ".about_tours",
+//     markers:true,
+//     start:'top bottom',
+//     end: 'bottom 50%',
+//     scrub:true,
+//     animation: gsap.fromTo( ".turists",
+//         { xPercent: 250 },
+//         {  xPercent: -50, duration:1, ease: "power1.out" }
+//     ),
+// })
+
+
 
 
 const locations = Array.from(document.querySelectorAll(".location_wrapper .location"))
