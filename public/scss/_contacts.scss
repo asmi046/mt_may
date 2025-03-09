@@ -1,11 +1,12 @@
 .contacts_blk {
-    background-color: $blue_light_color;
+    background-color: $tifany_color;
     border-radius: 20px;
-    border:1px solid $blue_light_color;
     display: flex;
     width:70%;
     margin: 0 auto;
     overflow: hidden;
+    box-shadow: $box_shadow;
+
     .map {
         height: 400px;
         flex: 1;

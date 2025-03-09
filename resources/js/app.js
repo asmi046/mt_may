@@ -174,18 +174,58 @@ gsap.to( ".obl_3",
     },
 )
 
-// ScrollTrigger.create({
-//     trigger: ".about_tours",
-//     markers:true,
-//     start:'top bottom',
-//     end: 'bottom 50%',
-//     scrub:true,
-//     animation: gsap.fromTo( ".turists",
-//         { xPercent: 250 },
-//         {  xPercent: -50, duration:1, ease: "power1.out" }
-//     ),
-// })
+gsap.set(".big_obl_left", {
+    xPercent: -100,
+    opacity:0,
+})
+gsap.to( ".big_obl_left", {
+        scrollTrigger: {
+            trigger: ".big_obl_section",
+            start:'top-=300 top+=50%',
+            end: 'top+=350px bottom-=20%',
+            scrub:true,
+            markers:true,
+        },
+        xPercent: 0,
+        opacity:1,
+        duration: 1.5
+    },
+)
 
+gsap.set(".big_obl_right", {
+    xPercent: 100,
+    opacity:0,
+})
+gsap.to( ".big_obl_right",
+    {
+        scrollTrigger: {
+            trigger: ".big_obl_section",
+            start:'top-=300 top+=50%',
+            end: 'top+=350px bottom-=20%',
+            scrub:true,
+        },
+        xPercent: 0,
+        opacity:1,
+        duration: 1.5
+    },
+)
+
+gsap.set(".big_obl_section .button", {
+    opacity:0,
+})
+gsap.to( ".big_obl_section .button",
+    {
+        scrollTrigger: {
+            trigger: ".big_obl_section",
+            start:'top-=300 top+=50%',
+            end: 'top+=350px bottom-=20%',
+            scrub:true,
+        },
+        delay:1,
+        opacity:1,
+        duration: 1.5
+    },
+)
 
 
 

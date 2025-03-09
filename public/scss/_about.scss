@@ -7,6 +7,7 @@
     background-position: center bottom;
     position: relative;
     overflow: hidden;
+    padding-bottom: 60px;
 
     .obl {
         z-index: 1;
@@ -37,6 +38,75 @@
     }
 
 
+
+
+}
+
+
+.big_obl_section {
+    padding-top:0;
+    height:70px;
+    position: relative;
+    display: flex;
+
+    .button{
+        margin: -20px auto auto auto;
+
+    }
+
+    .big_obl {
+        max-width:40%;
+        width:auto;
+        max-height:120px;
+        object-fit: unset;
+        height: auto;
+        position: absolute;
+        top:-50px;
+    }
+
+    .big_obl_left{
+        left: -5%;
+        opacity: 0;
+    }
+
+    .big_obl_right{
+        right:-5%;
+    }
+}
+
+@media (max-width:768px) {
+    .big_obl_section {
+        .big_obl {
+            top:-40px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .big_obl_section {
+        .big_obl {
+            top:-40px;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .big_obl_section {
+        .big_obl {
+            top:-50px;
+            max-height: unset;
+            max-width:100%;
+        }
+
+        .big_obl_left{
+            left: -77%;
+            opacity: 0;
+        }
+
+        .big_obl_right{
+            right:-77%;
+        }
+    }
 }
 
 

@@ -27,18 +27,19 @@
     <div class="modal_win" id="global_app">
         <modal-window rout="/send_consult" redirect="/thencs" hesh="showModal" title="Помощь специалиста" subtitle="Мы свяжемся с Вами в ближайшее время"></modal-window>
     </div>
+
     <x-menues.side-menu></x-menues.side-menu>
     <main id="main">
         <div id="smooth-wrapper">
             <div id="smooth-content">
                 @yield('main')
+                <x-footer></x-footer>
             </div>
         </div>
-
     </main>
 
 </body>
 
-<x-footer></x-footer>
+
 
 </html>

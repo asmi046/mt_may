@@ -1,4 +1,4 @@
-<section id="contacts" section="contacts_section">
+<section id="contacts" class="contacts_section">
     <div class="container">
         <div class="contacts_blk">
             <x-map.map-in-page></x-map.map-in-page>
