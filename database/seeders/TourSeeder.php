@@ -55,7 +55,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "29.04.2025",
                 'prices' => [
-                    ['price' => 3000, 'comment' => ''],
+                    ['price' => 3000, 'comment' => 'Стандартная цена'],
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Описание 1", 'in_top' => true],
@@ -83,7 +83,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "01.05.2025",
                 'prices' => [
-                    ['price' => 3000, 'comment' => ''],
+                    ['price' => 3000, 'comment' => 'Взрослые'],
                     ['price' => 2900, 'comment' => 'детям до 16 лет']
                 ],
                 'galery' => [
@@ -111,7 +111,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "11.05.2025",
                 'prices' => [
-                    ['price' => 2500, 'comment' => ''],
+                    ['price' => 2500, 'comment' => 'Стандартная цена'],
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Описание 1", 'in_top' => true],
@@ -172,8 +172,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "10.05.2025",
                 'prices' => [
-                    ['price' => 2500, 'comment' => ''],
-                    ['price' => 2500, 'comment' => '10 мая']
+                    ['price' => 2500, 'comment' => 'Стандартная цена']
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Описание 1", 'in_top' => true],
@@ -200,7 +199,7 @@ class TourSeeder extends Seeder
                     ['price' => 7000, 'comment' => 'детям до 16 лет (1 мая)'],
                     ['price' => 7500, 'comment' => 'взрослые (1 мая)'],
                     ['price' => 7500, 'comment' => 'детям до 16 лет (9 мая)'],
-                    ['price' => 8000, 'взрослые (9 мая)']
+                    ['price' => 8000, 'comment' => 'взрослые (9 мая)']
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Описание 1", 'in_top' => true],
@@ -297,7 +296,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "30.04.2025","7.05.2025",
                 'prices' => [
-                    ['price' => 20000, 'comment' => ''],
+                    ['price' => 20000, 'comment' => 'Стандартная цена'],
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Описание 1", 'in_top' => true],
