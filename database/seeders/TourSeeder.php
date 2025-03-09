@@ -21,6 +21,7 @@ class TourSeeder extends Seeder
 
         $data = [
             [
+                'order' => 10,
                 'dir' => 'moscow',
                 'title' => 'Москва + парк Патриот + ВДНХ выставка «Россия» на майские праздники из Курска',
                 'deys' => 1,
@@ -47,6 +48,7 @@ class TourSeeder extends Seeder
             ],
 
             [
+                'order' => 9,
                 'dir' => 'alpaka',
                 'title' => 'Альпака парк + Корабль Петра I',
                 'deys' => 1,
@@ -74,6 +76,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 8,
                 'dir' => 'bogatiri',
                 'title' => 'Богатырская застава. Катание на ладье. Богатыри',
                 'deys' => 1,
@@ -101,6 +104,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 7,
                 'dir' => 'rusborg',
                 'title' => 'РУСБОРГ — исторический фестиваль',
                 'deys' => 1,
@@ -130,6 +134,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 6,
                 'dir' => 'matrona',
                 'title' => 'Матрона Московская + Всецарица (5 апреля, 19 апреля)',
                 'deys' => 1,
@@ -160,6 +165,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 5,
                 'dir' => 'kudikina_gora',
                 'title' => 'Кудыкина гора на майские праздники',
                 'deys' => 1,
@@ -184,6 +190,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 4,
                 'dir' => 'volgograd',
                 'title' => 'Тур в Волгоград на майские праздники 2025 из Курска',
                 'deys' => 1,
@@ -210,6 +217,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 3,
                 'dir' => 'kazan',
                 'title' => 'Автобусный тур Казань + Йошкар-Ола + Остров-град Свияжск на майские праздники из Курска (Отель 4* в центре Казани)',
                 'deys' => 2,
@@ -250,6 +258,7 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 2,
                 'dir' => 'piter',
                 'title' => 'Санкт-Петербург на майские праздники из Курска Открытие фонтанов Петергофа + теплоход',
                 'deys' => 3,
@@ -280,7 +289,9 @@ class TourSeeder extends Seeder
                 ]
             ],
             [
+                'order' => 1,
                 'dir' => 'adigea',
+                'out_lnk' => 'https://adygea.mirturizma46.ru/',
                 'title' => 'Тур в Адыгею из Курска',
                 'deys' => 3,
                 'img' => "1.jpg",
