@@ -184,7 +184,7 @@ gsap.to( ".big_obl_left", {
             start:'top-=300 top+=50%',
             end: 'top+=350px bottom-=20%',
             scrub:true,
-            markers:true,
+            // markers:true,
         },
         xPercent: 0,
         opacity:1,
