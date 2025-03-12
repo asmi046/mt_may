@@ -298,3 +298,8 @@ for (let anchor of anchors) {
     })
   })
 }
+
+window.addEventListener('load', function () {
+    var preloader = document.getElementById('preloader');
+    preloader.classList.add('hide');
+});

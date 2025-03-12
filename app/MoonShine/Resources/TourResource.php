@@ -9,6 +9,7 @@ use MoonShine\Fields\ID;
 
 use MoonShine\Fields\Url;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\File;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
@@ -72,6 +73,7 @@ class TourResource extends ModelResource
             Text::make('URL', 'slug'),
             Number::make('Количество дней', 'deycount')->required(),
             Image::make('Изображение', 'img')->dir('tours'),
+            File::make("Фон шапки тура", 'header_bg')->dir('tours'),
             Date::make('Основная дата тура', 'start_data')->format('d.m.Y')->required(),
             TinyMce::make('Верхнее описание', 'top_description')->required(),
             TinyMce::make('Программа тура', 'program'),

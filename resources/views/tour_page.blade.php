@@ -3,7 +3,12 @@
 @section('main')
     <section class="banner_video">
         <video autoplay muted loop class="_video">
-            <source src="{{ asset('img/exkursionka.mp4') }}" type="video/mp4">
+            @if ($tour_info->header_bg)
+                <source src="{{ Storage::url($tour_info->header_bg) }}" type="video/mp4">
+            @else
+                <source src="{{ asset('img/exkursionka.mp4') }}" type="video/mp4">
+            @endif
+
         </video>
         <div class="shadow"></div>
 

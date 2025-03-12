@@ -25,6 +25,7 @@ class TourSeeder extends Seeder
                 'dir' => 'moscow',
                 'title' => 'Москва + парк Патриот + ВДНХ выставка «Россия» на майские праздники из Курска',
                 'deys' => 1,
+                'video' => "video.mp4",
                 'img' => "1.jpg",
                 'start_data'=> "28.04.2025",
                 'prices' => [
@@ -52,6 +53,7 @@ class TourSeeder extends Seeder
                 'dir' => 'alpaka',
                 'title' => 'Альпака парк + Корабль Петра I',
                 'deys' => 1,
+                'video' => "video.mp4",
                 'img' => "1.jpg",
                 'start_data'=> "29.04.2025",
                 'prices' => [
@@ -220,6 +222,7 @@ class TourSeeder extends Seeder
                 'dir' => 'kazan',
                 'title' => 'Автобусный тур Казань + Йошкар-Ола + Остров-град Свияжск на майские праздники из Курска (Отель 4* в центре Казани)',
                 'deys' => 2,
+                'video' => "video.mp4",
                 'img' => "1.jpg",
                 'start_data'=> "08.05.2025","12.06.2025",
                 'prices' => [
@@ -261,6 +264,7 @@ class TourSeeder extends Seeder
                 'dir' => 'piter',
                 'title' => 'Санкт-Петербург на майские праздники из Курска Открытие фонтанов Петергофа + теплоход',
                 'deys' => 3,
+                'video' => "video.mp4",
                 'img' => "1.jpg",
                 'start_data'=> "30.04.2025","7.05.2025",
                 'prices' => [
@@ -317,8 +321,13 @@ class TourSeeder extends Seeder
                 $inserted_galery[] = $galery_item;
             }
 
+            if (isset($item['video'])) {
+                Storage::disk('public')->put("tours/".$index."_".$item['dir'].".mp4", file_get_contents(public_path('tour_info/'.$item['dir'].'/'.$item['video'])), 'public');
+            }
+
             $inserted_item = [
                 'order' => $item['order'],
+                'header_bg' => isset($item['video'])?"tours/".$index."_".$item['dir'].".mp4":null,
                 'out_lnk' => isset($item['out_lnk'])?$item['out_lnk']:null,
                 'title' => $item['title'],
                 'title_input' => $item['title'],

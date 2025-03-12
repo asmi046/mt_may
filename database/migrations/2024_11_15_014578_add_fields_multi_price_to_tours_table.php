@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('tours', function (Blueprint $table) {
             $table->json('multi_data')->nullable()->comment('Добавление нескольких дат');
+            $table->string('header_bg', 700)->nullable()->comment('Видео или изображение на заставку');
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('tours', function (Blueprint $table) {
             $table->dropColumn('multi_data');
+            $table->dropColumn('header_bg');
         });
     }
 };
