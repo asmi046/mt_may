@@ -41,13 +41,15 @@
 
 
 .big_obl_section {
+    margin-top: -50px;
     padding-top:0;
-    height:70px;
+    height:120px;
     position: relative;
     display: flex;
+    overflow: hidden;
 
     .button{
-        margin: -20px auto auto auto;
+        margin: auto;
 
     }
 
@@ -58,7 +60,7 @@
         object-fit: unset;
         height: auto;
         position: absolute;
-        top:-50px;
+
     }
 
     .big_obl_left{
@@ -73,24 +75,14 @@
 
 @media (max-width:768px) {
     .big_obl_section {
-        .big_obl {
-            top:-40px;
-        }
+        margin-top: -40px;
     }
 }
 
-@media (max-width:768px) {
-    .big_obl_section {
-        .big_obl {
-            top:-40px;
-        }
-    }
-}
 
 @media (max-width:480px) {
     .big_obl_section {
         .big_obl {
-            top:-50px;
             max-height: unset;
             max-width:100%;
         }
