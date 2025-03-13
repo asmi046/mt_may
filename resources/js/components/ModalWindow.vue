@@ -67,7 +67,7 @@ export default {
 
             })
             .then((response) => {
-                ym(98794923,'reachGoal','send')
+                ym(100353854,'reachGoal','send')
                 this.showLoader = false
                 this.showAccept = true
 
