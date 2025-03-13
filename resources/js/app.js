@@ -292,10 +292,11 @@ for (let anchor of anchors) {
     main_side_menue.classList.remove('active');
     const blockID = anchor.getAttribute('href').substr(1)
 
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    smoother.scrollTo("#"+blockID, true)
+    // document.getElementById(blockID).scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start'
+    // })
   })
 }
 
