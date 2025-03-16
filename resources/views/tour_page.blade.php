@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <section id="tours_content" class="tours_content">
+    <section id="tours_content" class="tours_content {{ $tour_info->page_bg }}" >
 
         <img class="obl obl_1" src="{{ asset('img/obl/obl_1.svg') }}" alt="">
         <img class="obl obl_2" src="{{ asset('img/obl/obl_2.svg') }}" alt="">

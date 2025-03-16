@@ -41,7 +41,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     {
         return [
             MenuItem::make(
-                static fn() => __('Новогодние туры'),
+                static fn() => __('Майские туры'),
                 new TourResource()
             )->icon('heroicons.outline.globe-alt'),
 

@@ -24,10 +24,12 @@ class TourSeeder extends Seeder
                 'order' => 10,
                 'dir' => 'moscow',
                 'title' => 'Москва + парк Патриот + ВДНХ выставка «Россия» на майские праздники из Курска',
+                'slug' => "Москва + парк Патриот тур из Курска",
                 'deys' => 1,
                 'video' => "video.mp4",
                 'img' => "1.jpg",
                 'start_data'=> "28.04.2025",
+                'page_bg' => 'moskow_bg',
                 'prices' => [
                     ['price' => 4500, 'comment' => 'Детям до 16 лет'],
                     ['price' => 5000, 'comment' => 'Стандарт']
@@ -52,6 +54,7 @@ class TourSeeder extends Seeder
                 'order' => 9,
                 'dir' => 'alpaka',
                 'title' => 'Альпака парк + Корабль Петра I',
+                'slug' => 'Альпака парк + Корабль Петра I тур из Курска',
                 'deys' => 1,
                 'video' => "video.mp4",
                 'img' => "1.jpg",
@@ -81,6 +84,7 @@ class TourSeeder extends Seeder
                 'order' => 8,
                 'dir' => 'bogatiri',
                 'title' => 'Богатырская застава. Катание на ладье. Богатыри',
+                'slug' => "Тур богатырская застава из Куоска на майские",
                 'deys' => 1,
                 'img' => "1.jpg",
                 'start_data'=> "01.05.2025",
@@ -109,6 +113,7 @@ class TourSeeder extends Seeder
                 'order' => 7,
                 'dir' => 'rusborg',
                 'title' => 'РУСБОРГ — исторический фестиваль',
+                'slug' => "Тур РУСБОРГ — исторический фестиваль из Куоска на майские",
                 'deys' => 1,
                 'img' => "1.jpg",
                 'start_data'=> "11.05.2025",
@@ -139,9 +144,17 @@ class TourSeeder extends Seeder
                 'order' => 6,
                 'dir' => 'matrona',
                 'title' => 'Матрона Московская + Всецарица (5 апреля, 19 апреля)',
+                'slug' => "Тур Матрона Московская из Куоска на майские",
                 'deys' => 1,
+                'video' => "video.mp4",
                 'img' => "1.jpg",
-                'start_data'=> "05.04.2025","19.04.2025",
+                'start_data'=> "05.04.2025",
+                'page_bg' => 'moskow_bg',
+                'multi_data' => json_encode([
+                    ["#" => null, "start_data" => "2025-04-05"],
+                    ["#" => null,"start_data" => "2025-04-19"]
+                ]),
+
                 'prices' => [
                     ['price' => 3500, 'comment' => '(5 апреля) дети до 16 лет'],
                     ['price' => 4000, 'comment' => '(5 апреля) взрослые'],
@@ -170,9 +183,11 @@ class TourSeeder extends Seeder
                 'order' => 5,
                 'dir' => 'kudikina_gora',
                 'title' => 'Кудыкина гора на майские праздники',
+                'slug' => "Тур Кудыкина гора из Куоска на майские",
                 'deys' => 1,
                 'img' => "1.jpg",
                 'start_data'=> "10.05.2025",
+                'page_bg' => 'kudikina_bg',
                 'prices' => [
                     ['price' => 2500, 'comment' => 'Стандартная цена']
                 ],
@@ -194,9 +209,16 @@ class TourSeeder extends Seeder
                 'order' => 4,
                 'dir' => 'volgograd',
                 'title' => 'Тур в Волгоград на майские праздники 2025 из Курска',
+                'slug' => "Тур в Волгоград из Куоска на майские",
                 'deys' => 1,
                 'img' => "1.jpg",
-                'start_data'=> "01.05.2025","09.05.2025",
+                'video' => "video.mp4",
+                'start_data'=> "01.05.2025",
+                'multi_data' => json_encode([
+                    ["#" => null, "start_data" => "2025-05-01"],
+                    ["#" => null,"start_data" => "2025-05-09"]
+                ]),
+                'page_bg' => 'volgograd_bg',
                 'prices' => [
                     ['price' => 7000, 'comment' => 'детям до 16 лет (1 мая)'],
                     ['price' => 7500, 'comment' => 'взрослые (1 мая)'],
@@ -220,10 +242,11 @@ class TourSeeder extends Seeder
             [
                 'order' => 3,
                 'dir' => 'kazan',
-                'title' => 'Автобусный тур Казань + Йошкар-Ола + Остров-град Свияжск на майские праздники из Курска (Отель 4* в центре Казани)',
+                'title' => 'Автобусный тур Казань + Йошкар-Ола + Остров-град Свияжск',
+                'slug' => "Тур в Казань из Куоска на майские",
                 'deys' => 2,
                 'video' => "video.mp4",
-                'img' => "1.jpg",
+                'img' => "2.jpg",
                 'start_data'=> "08.05.2025","12.06.2025",
                 'prices' => [
                     ['price' => 25000, 'comment' => 'дети до 16 лет'],
@@ -263,10 +286,16 @@ class TourSeeder extends Seeder
                 'order' => 2,
                 'dir' => 'piter',
                 'title' => 'Санкт-Петербург на майские праздники из Курска Открытие фонтанов Петергофа + теплоход',
+                'slug' => "Тур в Санкт-Петербург из Куоска на майские",
                 'deys' => 3,
                 'video' => "video.mp4",
                 'img' => "1.jpg",
-                'start_data'=> "30.04.2025","7.05.2025",
+                'start_data'=> "30.04.2025",
+                'multi_data' => json_encode([
+                    ["#" => null, "start_data" => "2025-04-30"],
+                    ["#" => null,"start_data" => "2025-05-07"]
+                ]),
+                'page_bg' => 'spb_bg',
                 'prices' => [
                     ['price' => 26000, 'comment' => 'дети до 16 лет'],
                     ['price' => 26500, 'comment' => 'взрослые'],
@@ -296,9 +325,14 @@ class TourSeeder extends Seeder
                 'dir' => 'adigea',
                 'out_lnk' => 'https://adygea.mirturizma46.ru/',
                 'title' => 'Тур в Адыгею из Курска',
+                'slug' => "Тур в Адыгею из Куоска на майские",
                 'deys' => 3,
                 'img' => "1.jpg",
-                'start_data'=> "30.04.2025","7.05.2025",
+                'start_data'=> "30.04.2025",
+                'multi_data' => json_encode([
+                    ["#" => null, "start_data" => "2025-04-30"],
+                    ["#" => null,"start_data" => "2025-05-07"]
+                ]),
                 'prices' => [
                     ['price' => 20000, 'comment' => 'Стандартная цена'],
                 ],
@@ -309,10 +343,16 @@ class TourSeeder extends Seeder
             [
                 'order' => 2,
                 'dir' => 'belarus',
-                'title' => 'Беларусь 2025',
+                'title' => 'Беларусь на Майские праздники 2025',
+                'slug' => "Тур в Беларусь 2025 из Куоска на майские",
                 'deys' => 2,
-                'img' => "1.jpg",
-                'start_data'=> "01.05.2025","08.05.2025",
+                'img' => "10.jpg",
+                'video' => "video.mp4",
+                'start_data'=> "01.05.2025",
+                'multi_data' => json_encode([
+                    ["#" => null, "start_data" => "2025-05-01"],
+                    ["#" => null,"start_data" => "2025-05-08"]
+                ]),
                 'prices' => [
                     ['price' => 11000, 'comment' => '1 день. 8-10 мая (до 16 лет)'],
                     ['price' => 11500, 'comment' => '1 день. 8-10 мая (взрослые)'],
@@ -342,9 +382,11 @@ class TourSeeder extends Seeder
                 'order' => 2,
                 'dir' => 'gastrotur',
                 'title' => 'ГастроТур «Кофе. Хлеб и Вино» из Курска',
+                'slug' => "ГастроТур из Куоска на майские",
                 'deys' => 1,
                 'img' => "hleb.webp",
-                'start_data'=> "01.05.2025","08.05.2025",
+                'video' => "video.mp4",
+                'start_data'=> "01.05.2025",
                 'prices' => [
                     ['price' => 5900, 'comment' => 'дети до 16 лет'],
                     ['price' => 6100, 'comment' => 'взрослые'],
@@ -395,12 +437,14 @@ class TourSeeder extends Seeder
                 'order' => $item['order'],
                 'header_bg' => isset($item['video'])?"tours/".$index."_".$item['dir'].".mp4":null,
                 'out_lnk' => isset($item['out_lnk'])?$item['out_lnk']:null,
+                'page_bg' => isset($item['page_bg'])?$item['page_bg']:null,
                 'title' => $item['title'],
                 'title_input' => $item['title'],
-                'slug' => Str::slug($item['title']),
+                'slug' => Str::slug($item['slug']),
                 'img' => $main_img,
                 'deycount' => $item['deys'],
                 'start_data' => date("Y-m-d", strtotime($item['start_data'])),
+                'multi_data' => isset($item['multi_data'])?$item['multi_data']: null ,
                 'top_description' => file_get_contents(public_path('tour_info/'.$item['dir'].'/top.html')),
                 'program' => file_get_contents(public_path('tour_info/'.$item['dir'].'/program.html')),
                 'in_price' => file_get_contents(public_path('tour_info/'.$item['dir'].'/in_price.html')),

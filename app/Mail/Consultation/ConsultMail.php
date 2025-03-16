@@ -37,7 +37,7 @@ class ConsultMail extends Mailable
     {
         return new Envelope(
             from: new Address("mirturizma046@yandex.ru", "Мир Туризма"),
-            subject: 'Консультация специалиста - Новогодние туры',
+            subject: 'Консультация специалиста - ',
         );
     }
 

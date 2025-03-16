@@ -37,6 +37,22 @@
         position: relative;
     }
 
+    &.volgograd_bg {
+        background-image: url(../img/volgograd_bg.svg);
+    }
+
+    &.moskow_bg {
+        background-image: url(../img/moskow_bg.svg);
+    }
+
+    &.kudikina_bg {
+        background-image: url(../img/kudikina_bg.svg);
+    }
+
+    &.kazan_bg {
+        background-image: url(../img/kazan_bg.svg);
+    }
+
 }
 
 

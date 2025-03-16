@@ -15,6 +15,7 @@ use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
+use MoonShine\Fields\Select;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Switcher;
@@ -32,7 +33,7 @@ class TourResource extends ModelResource
 {
     protected string $model = Tour::class;
 
-    protected string $title = 'Новогодние туры';
+    protected string $title = 'Майские туры';
 
     public function import(): ?ImportHandler
     {
@@ -74,6 +75,13 @@ class TourResource extends ModelResource
             Number::make('Количество дней', 'deycount')->required(),
             Image::make('Изображение', 'img')->dir('tours'),
             File::make("Фон шапки тура", 'header_bg')->dir('tours'),
+            Select::make("Нижний фон", "page_bg")->options([
+                'kazan_bg' => 'Казань',
+                'kudikina_bg' => 'Кудыкина гора',
+                'moskow_bg' => 'Москва',
+                'spb_bg' => 'СПБ',
+                'volgograd_bg' => 'Волгоград',
+            ])->nullable(),
             Date::make('Основная дата тура', 'start_data')->format('d.m.Y')->required(),
             TinyMce::make('Верхнее описание', 'top_description')->required(),
             TinyMce::make('Программа тура', 'program'),
