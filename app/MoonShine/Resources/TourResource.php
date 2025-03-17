@@ -85,8 +85,8 @@ class TourResource extends ModelResource
             Date::make('Основная дата тура', 'start_data')->format('d.m.Y')->required(),
             TinyMce::make('Верхнее описание', 'top_description')->required(),
             TinyMce::make('Программа тура', 'program'),
-            TinyMce::make('Входит в стоимость', 'in_price')->required(),
-            TinyMce::make('За отдельную плату', 'out_price')->required(),
+            TinyMce::make('Входит в стоимость', 'in_price'),
+            TinyMce::make('За отдельную плату', 'out_price'),
 
             Json::make('Указать несколько дат тура', 'multi_data')
             ->removable()

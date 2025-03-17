@@ -220,10 +220,10 @@ class TourSeeder extends Seeder
                 ]),
                 'page_bg' => 'volgograd_bg',
                 'prices' => [
-                    ['price' => 7000, 'comment' => 'детям до 16 лет (1 мая)'],
-                    ['price' => 7500, 'comment' => 'взрослые (1 мая)'],
-                    ['price' => 7500, 'comment' => 'детям до 16 лет (9 мая)'],
-                    ['price' => 8000, 'comment' => 'взрослые (9 мая)']
+                    ['price' => 8000, 'comment' => 'детям до 16 лет (1 мая)'],
+                    ['price' => 8500, 'comment' => 'взрослые (1 мая)'],
+                    ['price' => 8500, 'comment' => 'детям до 16 лет (9 мая)'],
+                    ['price' => 9000, 'comment' => 'взрослые (9 мая)']
                 ],
                 'galery' => [
                     ['img' => "1.jpg", 'title' => "Присоединяйтесь...", 'in_top' => true],
@@ -447,8 +447,8 @@ class TourSeeder extends Seeder
                 'multi_data' => isset($item['multi_data'])?$item['multi_data']: null ,
                 'top_description' => file_get_contents(public_path('tour_info/'.$item['dir'].'/top.html')),
                 'program' => file_get_contents(public_path('tour_info/'.$item['dir'].'/program.html')),
-                'in_price' => file_get_contents(public_path('tour_info/'.$item['dir'].'/in_price.html')),
-                'out_price' => file_get_contents(public_path('tour_info/'.$item['dir'].'/out_price.html')),
+                'in_price' => file_exists(public_path('tour_info/'.$item['dir'].'/in_price.html'))?file_get_contents(public_path('tour_info/'.$item['dir'].'/in_price.html')):null,
+                'out_price' => file_exists(public_path('tour_info/'.$item['dir'].'/out_price.html'))?file_get_contents(public_path('tour_info/'.$item['dir'].'/out_price.html')):null,
                 'galery' => json_encode($inserted_galery),
                 'prices' => json_encode($item['prices'])
             ];

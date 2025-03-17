@@ -10,19 +10,19 @@
     </div>
     <div class="text">
         <h3>{{ $item['title'] }}</h3>
-        <p class="label label_blue">{{ $item['deycount'] }} {{ echo_days($item['deycount']) }}</p>
-        @if ($item['multi_data'])
-        <p class="label label_blue">
-            @foreach ($item['multi_data'] as $subitem)
-                {{ date ("d.m.Y", strtotime($subitem['start_data'])) }}
-                @if ($loop->index != count($item['multi_data'])-1)
-                ,
-                @endif
-            @endforeach
-        </p>
-        @else
-        <p class="label label_blue">{{ date ("d.m.Y", strtotime($item['start_data'])) }}</p>
-        @endif
+        <p class="label">{{ $item['deycount'] }} {{ echo_days($item['deycount']) }}</p>
+        <div class="m_data">
+            @if ($item['multi_data'])
+                @foreach ($item['multi_data'] as $subitem)
+                    <p class="label label_blue">
+                        {{ date ("d.m.Y", strtotime($subitem['start_data'])) }}
+                    </p>
+                @endforeach
+            @else
+                <p class="label label_blue">{{ date ("d.m.Y", strtotime($item['start_data'])) }}</p>
+            @endif
+        </div>
+
 
         <button class="button">Подробнее</button>
     </div>

@@ -79,7 +79,15 @@
             }
         }
 
-        .label_blue {
+        .m_data {
+            display: flex;
+            gap:10px;
+            .label {
+                margin-right: UNSET;
+            }
+        }
+
+        .label {
             margin-right: auto;
             margin-bottom: 10px;
         }
@@ -129,6 +137,14 @@
             }
             .img {
                 height: 180px;
+            }
+
+            .m_data {
+                flex-direction: column;
+                margin-bottom: 10px;
+                .label {
+                    margin: 0 auto 0 0;
+                }
             }
         }
     }

@@ -103,19 +103,25 @@
                 </div>
                 <div class="girland"></div>
 
-                <div class="in_price">
-                    <h2 class="big">В цену входит</h2>
-                    <div class="text_styles">
-                        {!! $tour_info->in_price !!}
+                @if ($tour_info->in_price)
+                    <div class="in_price">
+                        <h2 class="big">В цену входит</h2>
+                        <div class="text_styles">
+                            {!! $tour_info->in_price !!}
+                        </div>
                     </div>
-                </div>
+                @endif
 
-                <div class="program">
-                    <h2 class="big">За отдельную плату</h2>
-                    <div class="text_styles">
-                        {!! $tour_info->out_price !!}
+                @if ($tour_info->out_price)
+                    <div class="program">
+                        <h2 class="big">За отдельную плату</h2>
+                        <div class="text_styles">
+                            {!! $tour_info->out_price !!}
+                        </div>
                     </div>
-                </div>
+                @endif
+
+
             </div>
 
 
