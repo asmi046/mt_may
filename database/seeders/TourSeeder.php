@@ -87,7 +87,7 @@ class TourSeeder extends Seeder
                 'slug' => "Тур богатырская застава из Куоска на майские",
                 'deys' => 1,
                 'img' => "1.jpg",
-                'video' => "video.mp4",
+                // 'video' => "video.mp4",
                 'start_data'=> "01.05.2025",
                 'prices' => [
                     ['price' => 3000, 'comment' => 'Взрослые'],
@@ -190,6 +190,7 @@ class TourSeeder extends Seeder
                 'img' => "1.jpg",
                 'start_data'=> "10.05.2025",
                 'page_bg' => 'kudikina_bg',
+                'video' => "video.mp4",
                 'prices' => [
                     ['price' => 2500, 'comment' => 'Стандартная цена']
                 ],
