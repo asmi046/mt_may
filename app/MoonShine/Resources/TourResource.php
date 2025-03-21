@@ -72,7 +72,7 @@ class TourResource extends ModelResource
             Url::make('Внешняя ссылка', 'out_lnk'),
             Flex::make([
                 Text::make('Заголовок (h1)', 'title')->required(),
-                Text::make('Заголовок на карточке', 'title_card')->required(),
+                Text::make('Заголовок на карточке', 'title_card'),
             ]),
             TinyMce::make('Название на баннере', 'title_input'),
             Text::make('URL', 'slug'),
