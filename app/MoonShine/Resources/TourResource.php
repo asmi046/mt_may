@@ -19,6 +19,7 @@ use MoonShine\Fields\Select;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Switcher;
+use MoonShine\Decorations\Flex;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Resources\ModelResource;
@@ -69,7 +70,10 @@ class TourResource extends ModelResource
             ID::make()->sortable(),
             Number::make('Порядок', 'order'),
             Url::make('Внешняя ссылка', 'out_lnk'),
-            Text::make('Название', 'title')->required(),
+            Flex::make([
+                Text::make('Заголовок (h1)', 'title')->required(),
+                Text::make('Заголовок на карточке', 'title_card')->required(),
+            ]),
             TinyMce::make('Название на баннере', 'title_input'),
             Text::make('URL', 'slug'),
             Number::make('Количество дней', 'deycount')->required(),

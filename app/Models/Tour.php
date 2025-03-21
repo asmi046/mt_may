@@ -13,6 +13,7 @@ class Tour extends Model
         'order',
         'out_lnk',
         'title',
+        'title_card',
         'title_input',
         'slug',
         'img',
