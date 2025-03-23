@@ -2,7 +2,7 @@
 
 @section('main')
     <section class="banner_video">
-        <video autoplay muted loop class="_video">
+        <video autoplay muted loop playsinline class="_video">
             <source src="{{ asset('img/exkursionka.mp4') }}" type="video/mp4">
         </video>
         <div class="shadow"></div>
