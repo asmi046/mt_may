@@ -28,7 +28,7 @@ class SeoServices {
         $result .= '<meta property="og:description" content="'.$seo_description.'" />'."\n\r";
         $result .= '<meta property="og:url" content="'.\Request::url().'" />'."\n\r";
         $result .= '<meta property="og:site_name" content="'. config('asmiseo.title_postfix') .'" />'."\n\r";
-        $result .= '<meta property="og:image" content="'.asset('img/og_img.webp').'" />'."\n\r";
+        $result .= '<meta property="og:image" content="'.asset('img/og_img_may.webp').'" />'."\n\r";
         $result .= '<meta property="og:image:type" content="image/webp" />'."\n\r";
         $result .= '<meta name="twitter:card" content="summary_large_image" />'."\n\r";
 
