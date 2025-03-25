@@ -57,7 +57,8 @@ class TourResource extends ModelResource
             Number::make('Порядок', 'order')->sortable(),
             Text::make('Название', 'title'),
             Image::make('Изображение', 'img')->dir('tours'),
-            Date::make('Начало тура', 'start_data')->format('d.m.Y'),
+            Text::make('URL', 'slug'),
+            // Date::make('Начало тура', 'start_data')->format('d.m.Y'),
         ];
     }
 
