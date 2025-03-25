@@ -11,6 +11,7 @@ use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuElement;
 use App\MoonShine\Resources\TourResource;
+use App\MoonShine\Resources\SeoDataResource;
 use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 use MoonShine\Contracts\Resources\ResourceContract;
@@ -44,6 +45,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 static fn() => __('Майские туры'),
                 new TourResource()
             )->icon('heroicons.outline.globe-alt'),
+
+            MenuItem::make(
+                static fn() => __('SEO'),
+                new SeoDataResource()
+            )->icon('heroicons.outline.chart-bar-square'),
 
             MenuItem::make(
                 static fn() => __('Сброс кеша'),
