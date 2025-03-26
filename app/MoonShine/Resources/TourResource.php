@@ -17,9 +17,11 @@ use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Select;
 use MoonShine\Fields\TinyMce;
+use MoonShine\Decorations\Tab;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Switcher;
 use MoonShine\Decorations\Flex;
+use MoonShine\Decorations\Tabs;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Resources\ModelResource;
@@ -68,68 +70,91 @@ class TourResource extends ModelResource
     public function formFields(): array
     {
         return [
-            ID::make()->sortable(),
-            Number::make('Порядок', 'order'),
-            Url::make('Внешняя ссылка', 'out_lnk'),
-            Flex::make([
-                Text::make('Заголовок (h1)', 'title')->required(),
-                Text::make('Заголовок на карточке', 'title_card'),
+
+            Tabs::make([
+                Tab::make('Основное', [
+                    ID::make()->sortable(),
+                    Number::make('Порядок', 'order'),
+                    Url::make('Внешняя ссылка', 'out_lnk'),
+                    Flex::make([
+                        Text::make('Заголовок (h1)', 'title')->required(),
+                        Text::make('Заголовок на карточке', 'title_card'),
+                    ]),
+                    TinyMce::make('Название на баннере', 'title_input'),
+                    Text::make('URL', 'slug'),
+                    Number::make('Количество дней', 'deycount')->required(),
+                    Date::make('Основная дата тура', 'start_data')->format('d.m.Y')->required(),
+                    Json::make('Указать несколько дат тура', 'multi_data')
+                    ->removable()
+                    ->fields([
+                        Position::make(),
+                        Date::make('Дата тура', 'start_data')->format('d.m.Y')
+                    ]),
+
+                    Json::make('Варианты цены', 'prices')
+                    ->removable()
+                            ->fields([
+                                Position::make(),
+                                Text::make('Цена', 'price'),
+                                Text::make('Комментарий', 'comment')
+                    ]),
+                ]),
+
+                Tab::make('Описательная часть', [
+                    TinyMce::make('Верхнее описание', 'top_description')->required(),
+                    TinyMce::make('Входит в стоимость', 'in_price'),
+                    TinyMce::make('За отдельную плату', 'out_price'),
+                ]),
+
+                Tab::make('Программа тура', [
+                    TinyMce::make('Программа тура', 'program'),
+
+                    Json::make('Программа тура', 'tour_program')
+                    ->removable()
+                            ->fields([
+                                Position::make(),
+                                Text::make('Заголовок', 'title'),
+                            ]),
+                ]),
+
+                Tab::make('Оформление страницы', [
+                    Image::make('Изображение', 'img')->dir('tours'),
+                    File::make("Фон шапки тура", 'header_bg')->dir('tours'),
+                    Select::make("Нижний фон", "page_bg")->options([
+                        'kazan_bg' => 'Казань',
+                        'kudikina_bg' => 'Кудыкина гора',
+                        'moskow_bg' => 'Москва',
+                        'spb_bg' => 'СПБ',
+                        'volgograd_bg' => 'Волгоград',
+                    ])->nullable(),
+                ]),
+
+                Tab::make('Галерея', [
+                    Json::make('Галерея', 'galery')
+                    ->removable()
+                            ->fields([
+                                Position::make(),
+                                Image::make('Изображение', 'img')->dir('tours'),
+                                Text::make('Заголовок', 'title'),
+                                Switcher::make('В шапке', 'in_top')
+                            ]),
+                ])
             ]),
-            TinyMce::make('Название на баннере', 'title_input'),
-            Text::make('URL', 'slug'),
-            Number::make('Количество дней', 'deycount')->required(),
-            Image::make('Изображение', 'img')->dir('tours'),
-            File::make("Фон шапки тура", 'header_bg')->dir('tours'),
-            Select::make("Нижний фон", "page_bg")->options([
-                'kazan_bg' => 'Казань',
-                'kudikina_bg' => 'Кудыкина гора',
-                'moskow_bg' => 'Москва',
-                'spb_bg' => 'СПБ',
-                'volgograd_bg' => 'Волгоград',
-            ])->nullable(),
-            Date::make('Основная дата тура', 'start_data')->format('d.m.Y')->required(),
-            TinyMce::make('Верхнее описание', 'top_description')->required(),
-            TinyMce::make('Программа тура', 'program'),
-            TinyMce::make('Входит в стоимость', 'in_price'),
-            TinyMce::make('За отдельную плату', 'out_price'),
 
-            Json::make('Указать несколько дат тура', 'multi_data')
-            ->removable()
-            ->fields([
-                Position::make(),
-                Date::make('Дата тура', 'start_data')->format('d.m.Y')
-            ]),
+            ActionButton::make(
+                label: 'Перейти к странице',
+                url: route('tour_page', $this->getItem()['slug']),
+            )
+            ->success()
+            ->blank()
 
-            Json::make('Программа тура', 'tour_program')
-            ->removable()
-                    ->fields([
-                        Position::make(),
-                        Text::make('Заголовок', 'title'),
-                    ]),
 
-            Json::make('Варианты цены', 'prices')
-            ->removable()
-                    ->fields([
-                        Position::make(),
-                        Text::make('Цена', 'price'),
-                        Text::make('Комментарий', 'comment')
-                    ]),
 
-            Json::make('Галерея', 'galery')
-            ->removable()
-                    ->fields([
-                        Position::make(),
-                        Image::make('Изображение', 'img')->dir('tours'),
-                        Text::make('Заголовок', 'title'),
-                        Switcher::make('В шапке', 'in_top')
-                    ]),
 
-                    ActionButton::make(
-                        label: 'Перейти к странице',
-                        url: route('tour_page', $this->getItem()['slug']),
-                    )
-                    ->success()
-                    ->blank()
+
+
+
+
         ];
     }
 
