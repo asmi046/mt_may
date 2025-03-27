@@ -63,7 +63,7 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 ScrollTrigger.normalizeScroll(true)
 
 let smoother = ScrollSmoother.create({
-    smooth: 1,
+    smooth: 2,
     effects: true,
     smoothTouch: 0.1,
     normalizeScroll: true

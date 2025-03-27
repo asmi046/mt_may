@@ -48,16 +48,16 @@
         <modal-window rout="/send_consult" redirect="/thencs" hesh="showModal" title="Помощь специалиста" subtitle="Мы свяжемся с Вами в ближайшее время"></modal-window>
     </div>
     <x-preloader></x-preloader>
-    <x-menues.side-menu></x-menues.side-menu>
+
 
     <main id="main">
         <div id="smooth-wrapper">
             <div id="smooth-content">
-
                 @yield('main')
                 <x-footer></x-footer>
             </div>
         </div>
+        <x-menues.side-menu></x-menues.side-menu>
     </main>
 
 </body>
