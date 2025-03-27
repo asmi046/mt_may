@@ -49,15 +49,16 @@
     </div>
     <x-preloader></x-preloader>
 
+    <x-menues.side-menu></x-menues.side-menu>
 
     <main id="main">
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
+        {{-- <div id="smooth-wrapper">
+            <div id="smooth-content"> --}}
                 @yield('main')
                 <x-footer></x-footer>
-            </div>
-        </div>
-        <x-menues.side-menu></x-menues.side-menu>
+            {{-- </div>
+        </div> --}}
+
     </main>
 
 </body>

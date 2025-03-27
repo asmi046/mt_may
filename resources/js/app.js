@@ -58,16 +58,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
-gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+gsap.registerPlugin(
+    TextPlugin,
+    ScrollTrigger,
+    // ScrollSmoother,
+    ScrollToPlugin
+);
 
 ScrollTrigger.normalizeScroll(true)
 
-let smoother = ScrollSmoother.create({
-    smooth: 2,
-    effects: true,
-    smoothTouch: 0.1,
-    normalizeScroll: true
-});
+// let smoother = ScrollSmoother.create({
+//     smooth: 2,
+//     effects: true,
+//     smoothTouch: 0.1,
+//     normalizeScroll: true
+// });
 
 
 let img_object_from =  {
