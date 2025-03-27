@@ -57,6 +57,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+const isMobile = window.innerWidth < 768;
 
 gsap.registerPlugin(
     TextPlugin,
@@ -67,12 +68,14 @@ gsap.registerPlugin(
 
 // ScrollTrigger.normalizeScroll(true)
 
-let smoother = ScrollSmoother.create({
-    smooth: 2,
-    effects: true,
-    smoothTouch: 0.1,
-    normalizeScroll: true
-});
+if (!isMobile) {
+    let smoother = ScrollSmoother.create({
+        smooth: 2,
+        effects: true,
+        smoothTouch: 0.1,
+        normalizeScroll: true
+    });
+}
 
 
 let img_object_from =  {
@@ -310,11 +313,15 @@ for (let anchor of anchors) {
     main_side_menue.classList.remove('active');
     const blockID = anchor.getAttribute('href').substr(1)
 
-    smoother.scrollTo("#"+blockID, true)
-    // document.getElementById(blockID).scrollIntoView({
-    //   behavior: 'smooth',
-    //   block: 'start'
-    // })
+    if (!isMobile) {
+        smoother.scrollTo("#"+blockID, true)
+    } else {
+        document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
+
   })
 }
 
