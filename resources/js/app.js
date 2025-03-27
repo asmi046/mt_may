@@ -4,6 +4,7 @@ import './bootstrap';
 import {createApp} from 'vue/dist/vue.esm-bundler';
 import ModalWindow from "./components/ModalWindow.vue"
 import TourPrice from "./components/TourPrice.vue"
+import Tap from "./components/Tap.vue"
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { VMaskDirective } from 'v-slim-mask'
@@ -33,6 +34,17 @@ const price_app = createApp({
 price_app.use(VueAxios, axios)
 price_app.directive('mask', VMaskDirective)
 price_app.mount("#price_app");
+
+const programm_tab = createApp({
+    components:{
+        Tap,
+    },
+    setup() {}
+})
+
+programm_tab.use(VueAxios, axios)
+programm_tab.directive('mask', VMaskDirective)
+programm_tab.mount("#programm_tab");
 
 
 import SideMenu from './menues.js';

@@ -113,7 +113,10 @@ class TourResource extends ModelResource
                     ->removable()
                             ->fields([
                                 Position::make(),
-                                Text::make('Заголовок', 'title'),
+                                Text::make('Тип программы', 'type'),
+                                Number::make('№ дня', 'number'),
+                                Text::make('Дата дня', 'date'),
+                                TinyMce::make('Описание', 'description'),
                             ]),
                 ]),
 

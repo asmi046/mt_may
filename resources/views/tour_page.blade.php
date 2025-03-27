@@ -36,20 +36,20 @@
                 @else
                     <p class="label label_white">{{ date ("d.m.Y", strtotime($tour_info['start_data'])) }}</p>
                 @endif
-
+{{--
                 @if ($tour_info->tour_program)
                     <div class=toyr_program>
 
                         @foreach ($tour_info->tour_program as $item)
                             <div class="step">
                                 <div class="point"></div>
-                                <span>{{ $item['title'] }}</span>
+                                <span>{{ $item['type'] }}</span>
                             </div>
                         @endforeach
 
                         <div class="line"></div>
                     </div>
-                @endif
+                @endif --}}
 
 
                 <a class="button yakor" href="#tours_content">Подробнее о туре</a>
@@ -95,12 +95,28 @@
                     </div>
                 </div>
 
-                <div class="program">
-                    <h2 class="big">Программа тура</h2>
-                    <div class="text_styles">
-                        {!! $tour_info->program !!}
+                @if (!empty($struct_programm))
+                    <div id="programm_tab" class="tour_program_tap">
+                        <h2 class="big">Программа тура</h2>
+                        <x-tour-program-tap :programm="$struct_programm"></x-tour-program-tap>
                     </div>
-                </div>
+                    <div class="program">
+                        <h2 class="big">Полезная информация</h2>
+                        <div class="text_styles">
+                            {!! $tour_info->program !!}
+                        </div>
+                    </div>
+                @else
+                    <div class="program">
+                        <h2 class="big">Программа тура</h2>
+                        <div class="text_styles">
+                            {!! $tour_info->program !!}
+                        </div>
+                    </div>
+                @endif
+
+
+
                 <div class="girland"></div>
 
                 @if ($tour_info->in_price)

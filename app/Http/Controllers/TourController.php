@@ -10,6 +10,12 @@ class TourController extends Controller
     public function index($slug) {
 
         $tour_info = Tour::where('slug', $slug)->firstOrFail();
-        return view('tour_page', ['tour_info' => $tour_info]);
+
+        $tur_programm = [];
+        foreach ($tour_info->tour_program as $item ) {
+            $tur_programm[$item['type']][$item['number']] = $item;
+        }
+
+        return view('tour_page', ['tour_info' => $tour_info, 'struct_programm' => $tur_programm]);
     }
 }
