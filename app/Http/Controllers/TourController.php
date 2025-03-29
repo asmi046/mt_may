@@ -12,6 +12,8 @@ class TourController extends Controller
         $tour_info = Tour::where('slug', $slug)->firstOrFail();
 
         $tur_programm = [];
+
+        if ($tour_info->tour_program)
         foreach ($tour_info->tour_program as $item ) {
             $tur_programm[$item['type']][$item['number']] = $item;
         }

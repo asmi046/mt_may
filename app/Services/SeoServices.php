@@ -3,15 +3,18 @@ namespace App\Services;
 
 use App\Models\SeoData;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class SeoServices {
 
     public $seo_data;
+    public $og_img;
 
     public function __construct()
     {
         $this->seo_data = $this->get_data_by_url();
+        $this->og_img = asset('img/og_img_may.webp');
     }
 
     public function __toString() {
@@ -19,6 +22,9 @@ class SeoServices {
         $seo_title = $this->seo_data?$this->seo_data->seo_title:config('asmiseo.default_seo_title');
         $seo_title .= config('asmiseo.concat_title_postfix')?" - ".config('asmiseo.title_postfix'):"";
         $seo_description = $this->seo_data?$this->seo_data->seo_description:config('asmiseo.default_seo_description');
+
+        if ($this->seo_data)
+            $this->og_img = ($this->seo_data->img)?Storage::url($this->seo_data->img):$this->og_img;
 
         $result = "<title>".$seo_title."</title>"."\n\r";
         $result .= '<meta name="description" content="'.$seo_description.'">'."\n\r";
@@ -28,9 +34,10 @@ class SeoServices {
         $result .= '<meta property="og:description" content="'.$seo_description.'" />'."\n\r";
         $result .= '<meta property="og:url" content="'.\Request::url().'" />'."\n\r";
         $result .= '<meta property="og:site_name" content="'. config('asmiseo.title_postfix') .'" />'."\n\r";
-        $result .= '<meta property="og:image" content="'.asset('img/og_img_may.webp').'" />'."\n\r";
+        $result .= '<meta property="og:image" content="'.($this->og_img ).'" />'."\n\r";
         $result .= '<meta property="og:image:type" content="image/webp" />'."\n\r";
         $result .= '<meta name="twitter:card" content="summary_large_image" />'."\n\r";
+        // $result .= $this->seo_data->img."\n\r";
 
         return $result;
     }
