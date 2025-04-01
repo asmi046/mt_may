@@ -4,12 +4,27 @@ import './bootstrap';
 import {createApp} from 'vue/dist/vue.esm-bundler';
 import ModalWindow from "./components/ModalWindow.vue"
 import TourPrice from "./components/TourPrice.vue"
+import Review from './components/Reviews/Review.vue'
 import Tap from "./components/Tap.vue"
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { VMaskDirective } from 'v-slim-mask'
 
+import('swiper/element/bundle').then(mod => {
+    mod.register()
+})
+
 import fslightbox from 'fslightbox'
+
+const review_app = createApp({
+    components:{
+        Review,
+        ModalWindow,
+    },
+})
+
+review_app.use(VueAxios, axios)
+review_app.mount("#review_app")
 
 const global_app = createApp({
     components:{

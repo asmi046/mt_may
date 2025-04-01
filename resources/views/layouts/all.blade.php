@@ -42,6 +42,10 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/100353854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <script>
+        window.asset = "{{ asset('') }}";
+        window.storage = "{{ asset('storage') }}";
+    </script>
 </head>
 <body>
     <div class="modal_win" id="global_app">
@@ -51,6 +55,7 @@
 
     <x-menues.side-menu></x-menues.side-menu>
 
+    @include("allicon")
     <main id="main">
         <div id="smooth-wrapper">
             <div id="smooth-content">

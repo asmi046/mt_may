@@ -75,6 +75,15 @@
 
     <x-big-obl></x-big-obl>
 
+    <section class="review_section">
+        <div class="container">
+            <h2>Клиенты пишут о нашей компании:</h2>
+            <div id="review_app" class="review_app">
+                <review></review>
+            </div>
+        </div>
+    </section>
+
     <x-contacts-section></x-contacts-section>
 
 @endsection

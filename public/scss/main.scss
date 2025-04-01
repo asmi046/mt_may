@@ -200,6 +200,42 @@ h1 {
     }
 }
 
+swiper-container{
+    display: flex;
+}
+
+swiper-slide{
+    display: flex;
+    height: auto
+}
+
+
+.arrow_button {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 0.5px solid $blue_light_color;
+    background-color: $blue_light_color;
+    display: flex;
+    svg {
+        width: 35%;
+        height: 35%;
+        stroke: $gray_border_color;
+        margin: auto;
+    }
+    &:hover {
+        background-color: $sub_color;
+        border-color: $sub_color;
+        svg {
+            stroke: white;
+        }
+    }
+
+    &.arrow_pred {
+        transform: rotate(180deg);
+    }
+}
+
 @import "header";
 @import "menues";
 @import "banner";
@@ -216,4 +252,5 @@ h1 {
 @import "palaroid";
 @import "tour_program";
 @import "program_in_tap";
+@import "review";
 
