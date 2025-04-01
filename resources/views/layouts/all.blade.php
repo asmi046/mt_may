@@ -51,7 +51,7 @@
     <div class="modal_win" id="global_app">
         <modal-window rout="/send_consult" redirect="/thencs" hesh="showModal" title="Помощь специалиста" subtitle="Мы свяжемся с Вами в ближайшее время"></modal-window>
     </div>
-    <x-preloader></x-preloader>
+    {{-- <x-preloader></x-preloader> --}}
 
     <x-menues.side-menu></x-menues.side-menu>
 
