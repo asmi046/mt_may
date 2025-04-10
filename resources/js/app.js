@@ -83,8 +83,10 @@ gsap.registerPlugin(
 
 // ScrollTrigger.normalizeScroll(true)
 
+let smoother = null
+
 if (!isMobile) {
-    let smoother = ScrollSmoother.create({
+    smoother = ScrollSmoother.create({
         smooth: 2,
         effects: true,
         smoothTouch: 0.1,
@@ -327,6 +329,8 @@ for (let anchor of anchors) {
 
     main_side_menue.classList.remove('active');
     const blockID = anchor.getAttribute('href').substr(1)
+
+    console.log(isMobile)
 
     if (!isMobile) {
         smoother.scrollTo("#"+blockID, true)
