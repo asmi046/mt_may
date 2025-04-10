@@ -9,7 +9,7 @@ class ReviewController extends Controller
 {
     public function index() {
         $paltforms = Review::select('platform')->groupBy('platform')->get();
-        $all_reviews = Review::select()->orderBy('created_at', 'DESC')->inRandomOrder()->get();
+        $all_reviews = Review::select()->where('score', 5)->orderBy('created_at', 'DESC')->inRandomOrder()->get();
 
         $sorted_review = [];
 
