@@ -95,7 +95,9 @@ class TourResource extends ModelResource
                     ->removable()
                             ->fields([
                                 Position::make(),
+                                Text::make('Продано', 'soldout'),
                                 Text::make('Цена', 'price'),
+                                Text::make('Дата', 'data'),
                                 Text::make('Комментарий', 'comment')
                     ]),
                 ]),

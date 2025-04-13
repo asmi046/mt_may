@@ -4,6 +4,7 @@ import './bootstrap';
 import {createApp} from 'vue/dist/vue.esm-bundler';
 import ModalWindow from "./components/ModalWindow.vue"
 import TourPrice from "./components/TourPrice.vue"
+import TourPriceSelect from "./components/TourPriceSelect.vue"
 import Review from './components/Reviews/Review.vue'
 import Tap from "./components/Tap.vue"
 import axios from 'axios'
@@ -42,6 +43,7 @@ global_app.mount("#global_app");
 const price_app = createApp({
     components:{
         TourPrice,
+        TourPriceSelect,
     },
     setup() {}
 })

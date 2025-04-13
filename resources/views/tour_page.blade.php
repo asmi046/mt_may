@@ -80,7 +80,12 @@
 
                     @isset($tour_info->prices[0])
                         <div class="pay_wrapper">
-                            <tour-price title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price>
+                            @if (isset($tour_info->prices[0]['data']))
+                                <tour-price-select title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price-select>
+                            @else
+                                <tour-price title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price>
+                            @endif
+
                         </div>
                     @endisset
 

@@ -82,6 +82,7 @@
         .m_data {
             display: flex;
             gap:10px;
+            flex-wrap: wrap;
             .label {
                 margin-right: UNSET;
             }
