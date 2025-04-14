@@ -107,6 +107,8 @@
         .tur_data_wrapper {
             display: flex;
             gap:10px;
+            width:70%;
+            flex-wrap: wrap;
 
             .tur_data{
                 padding: 7px 12px;
@@ -124,7 +126,7 @@
                     position: absolute;
                     padding: 3px 5px;
                     border-radius: 5px;
-                    width: 35px;
+                    width: 45px;
                     transform: rotate(40deg);
                     right: -11px;
                     top: 6px;
