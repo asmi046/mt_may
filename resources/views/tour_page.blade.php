@@ -80,11 +80,21 @@
 
                     @isset($tour_info->prices[0])
                         <div class="pay_wrapper">
-                            @if (isset($tour_info->prices[0]['data']))
-                                <tour-price-select title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price-select>
+                            @if ($tour_info->soldout)
+                            <div class="tour_price">
+                                <img class="soldout" src="{{ asset('img/soldout.webp') }}" alt="Тур продан, мест нет!">
+                                <a class="button button_icon" href="#showModal"><i class="babl_icon"></i><span>Задать вопрос</span></a>
+                            </div>
+
                             @else
-                                <tour-price title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price>
+                                @if (isset($tour_info->prices[0]['data']))
+                                    <tour-price-select title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price-select>
+                                @else
+                                    <tour-price title="{{$tour_info->title}}" img="{{config('app.url').Storage::url($tour_info->img)}}"  :prices="{{json_encode($tour_info->prices)}}"></tour-price>
+                                @endif
                             @endif
+
+
 
                         </div>
                     @endisset

@@ -130,6 +130,7 @@
                     transform: rotate(40deg);
                     right: -11px;
                     top: 6px;
+                    text-align: center;
                 }
 
                 &:hover,
@@ -159,7 +160,7 @@
             margin-bottom: 20px;
             font-size: 28px;
             font-family: "Play";
-            text-align: center;
+
             .v{
                 color:$gold_color;
             }
@@ -187,6 +188,12 @@
         background-size: contain;
         margin: 10px 0;
     }
+}
+
+.soldout {
+    width:230px;
+    margin: 20px  0;
+    transform: rotate(-9deg);
 }
 
 
